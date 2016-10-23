@@ -5,7 +5,7 @@ Serviço web que utiliza o framework flask, que através de um CEP informado, ob
 de [terceiro][1], com a possibilidade de salvá-los, e na aba Registros, consultá-los e também excluí-los.
 
 ## Serviço Online
-- [iClinic Challenge][2]
+- [iClinic Challenge Flask][2]
 
 ## Código Fonte
 - [GitHub][3]
@@ -33,8 +33,7 @@ de [terceiro][1], com a possibilidade de salvá-los, e na aba Registros, consult
 
 ## Back-End
 - Fluxo do projeto listados abaixo pelos arquivos:
-    - main.py : definição das páginas e url do sistema
-    - views.py : definição das classes de cada página, seus eventos e funções
+    - main.py : definição das páginas e suas urls, seus eventos e funções
     - logics.py : lógica do sistema, que faz a comunicação com o banco de dados (NoSQL) e suas operações
     - models.py : definição das variáveis e seus tipos, que serão armazenadas no banco de dados
 
@@ -46,10 +45,10 @@ de [terceiro][1], com a possibilidade de salvá-los, e na aba Registros, consult
 
 - Servidor:
     - appengine appcfg.py update .
-        - http://iclinic-challenge.appspot.com/
+        - http://iclinic-challenge-flask.appspot.com/
 
 [1]: http://postmon.com.br/
-[2]: http://iclinic-challenge.appspot.com/
+[2]: http://iclinic-challenge-flask.appspot.com/
 [3]: https://github.com/eRebelo/iClinic-Challenge
 [4]: https://www.jetbrains.com/pycharm/
 [5]: http://knockoutjs.com/
