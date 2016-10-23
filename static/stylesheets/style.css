@@ -1,0 +1,349 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+body {
+    font-family: "Lato", sans-serif;
+    text-align: center;
+    margin: 0;
+    /* --- Form styling --- */
+}
+
+body fieldset {
+    border: none;
+}
+
+/*body fieldset:valid > button:hover {
+    opacity: 1;
+    background: #CD3C3C;
+}*/
+
+body button {
+    width: 280px;
+    cursor: pointer;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    border: none;
+    font-family: "Lato", sans-serif;
+    padding: 20px;
+    background-color: #F1F1F1;
+    /*color: black;*/
+    outline: none;
+    margin-top: 15px;
+}
+
+body .kickass_field {
+    margin: auto;
+    position: relative;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100px;
+    right: 0;
+    width: 280px;
+}
+
+body .kickass_field lable {
+    font-size: 14px;
+    position: absolute;
+    height: 100px;
+    overflow: hidden;
+    left: 0;
+    width: 100%;
+    top: 50px;
+    text-align: left;
+    color: #F65252;
+    font-weight: 700;
+    font-family: "Lato", sans-serif;
+    pointer-events: none;
+    -webkit-transition: all .2s .3s;
+    transition: all .2s .3s;
+}
+
+body .kickass_field lable span {
+    font-size: 10px;
+    color: #9f9fb5;
+    clear: left;
+    opacity: 0;
+    font-weight: 400;
+    display: block;
+    -webkit-transition: opacity .5s .0s;
+    transition: opacity .5s .0s;
+}
+
+body .kickass_field lable:after {
+    width: 4px;
+    content: '';
+    height: 8px;
+    border-bottom: 2px solid #f65252;
+    border-right: 2px solid #f65252;
+    -webkit-transform: translateX(-10px) rotate(45deg);
+    transform: translateX(-10px) rotate(45deg);
+    position: absolute;
+    left: 120%;
+    top: 30px;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+}
+
+body .kickass_field input {
+    border: none;
+    color: #6E738A;
+    font-weight: 400;
+    padding: 40px 0px 10px 0px;
+    background: transparent;
+    letter-spacing: 1px;
+    outline: none;
+    font-family: "Lato", sans-serif;
+    height: 30px;
+    width: 280px;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    font-size: 14px;
+    box-shadow: 0px 2px #f65252;
+}
+
+body .kickass_field input:focus + lable {
+    color: #F65252;
+    font-size: 10px;
+    top: 10px;
+    -webkit-transition: all .2s .0s;
+    transition: all .2s .0s;
+}
+
+body .kickass_field input:focus + lable span {
+    opacity: 1;
+    -webkit-transition: opacity .5s .3s;
+    transition: opacity .5s .3s;
+}
+
+/*
+body .kickass_field input:valid + lable {
+    font-size: 10px;
+    top: 10px;
+    color: #f65252;
+}
+
+body .kickass_field input[type="password"]:valid + lable span {
+    color: #99B62F;
+}
+
+body .kickass_field input:valid + lable span {
+    opacity: 1;
+    -webkit-transition: opacity .3s 0s;
+    transition: opacity .3s 0s;
+}
+
+body .kickass_field input:valid + lable::after {
+    display: block;
+    left: 100%;
+}
+
+body .kickass_field input:invalid {
+    color: #f9f9f9;
+}
+
+body .kickass_field input:focus:invalid {
+    color: #6E738A;
+}*/
+
+/* --- End Form styling --- */
+/* --- Begin template styling --- */
+.container {
+    /*background: #f9f9f9;*/
+    height: 100%;
+    border: 14px solid white;
+    box-sizing: border-box;
+    /* --- End template styling --- */
+}
+
+.container_inner {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.container h1, .container h2 {
+    font-weight: 300;
+}
+
+.container h1 {
+    margin: 0;
+    color: #6E738A;
+}
+
+.container p {
+    color: black;
+    font-weight: bold;
+    margin-top: 40px;
+    font-size: 16px;
+}
+
+.cep_button {
+    opacity: .5;
+    background-color: #333;
+    color: #fff;
+    font-size: 24px;
+    border-radius: 8px;
+}
+
+.cep_button:hover {
+    background-color: #111;
+}
+
+.save_cep_button {
+    opacity: .5;
+    background-color: #333;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 8px;
+    width: 100px !important;
+    padding: 10px !important;
+    display: none;
+}
+
+.save_cep_button:hover {
+    background-color: #111;
+}
+
+.legend_table {
+    text-align: center;
+}
+
+.footer {
+    left: 0px;
+    bottom: 0px;
+    height: 30px;
+    width: 100%;
+    position: fixed;
+}
+
+.container .footer span {
+    font-size: 12px;
+    color: #bcbcbc;
+    font-weight: 300;
+}
+
+.container .footer span a {
+    color: #f65252;
+    font-weight: 700;
+}
+
+.container .footer span img {
+    position: relative;
+    margin: 3px;
+    top: 7px;
+}
+
+.container h2 {
+    margin: 7px 0 24px 0;
+    font-size: 22px;
+    color: #9A9FB5;
+}
+
+.container a {
+    color: #f65252;
+    text-decoration: none;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+
+.new_lead {
+    color: #F65253 !important;
+    font-size: 22px !important;
+    margin-top: 10px !important;
+    text-decoration: underline;
+}
+
+<!--
+MENU
+
+-->
+.btn-nav {
+    background-color: #fff;
+    border: 1px solid #e0e1db;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box; /* Firefox, other Gecko */
+    box-sizing: border-box; /* Opera/IE 8+ */
+}
+
+.btn-nav:hover {
+    color: #e92d00;
+    cursor: pointer;
+    -webkit-transition: color 1s; /* For Safari 3.1 to 6.0 */
+    transition: color 1s;
+    border-top: 6px solid #e92d00;
+    border-bottom: 6px solid #e92d00;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.btn-nav.active {
+    color: #e92d00;
+    padding: 2px;
+    border-left: 0;
+    border-right: 0;
+    /*-webkit-transition: border 0.3s ease-out, color 0.3s ease 0.5s;
+    -moz-transition: border 0.3s ease-out, color 0.3s ease 0.5s;
+    -ms-transition: border 0.3s ease-out, color 0.3s ease 0.5s; */ /* IE10 is actually unprefixed */
+    /*-o-transition: border 0.3s ease-out, color 0.3s ease 0.5s;
+    transition: border 0.3s ease-out, color 0.3s ease 0.5s;
+    -webkit-animation: pulsate 1.2s linear infinite;
+    animation: pulsate 1.2s linear infinite;*/
+}
+
+/*.btn-nav.active:before {
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: 6px 6px 0;
+	border-color: #e92d00 transparent;
+	display: block;
+	width: 0;
+	z-index: 1;
+	margin-left: -6px;
+	top: 0;
+	left: 50%;
+}*/
+.btn-nav .glyphicon {
+    padding-top: 16px;
+    font-size: 40px;
+}
+
+.btn-nav.active p {
+    margin-bottom: 8px;
+}
+
+@-webkit-keyframes pulsate {
+    50% {
+        color: #000;
+    }
+}
+
+@keyframes pulsate {
+    50% {
+        color: #000;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-group {
+        display: block !important;
+        float: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .btn-nav .glyphicon {
+        padding-top: 12px;
+        font-size: 26px;
+    }
+}

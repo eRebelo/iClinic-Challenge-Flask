@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/static/bootstrap/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css"/>
+
+    <!-- Panel CSS -->
+    <link href="/static/stylesheets/style.css" media="screen" rel="stylesheet" type="text/css"/>
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="/static/jquery/js/jquery-3.1.1.min.js"></script>
+    <!--script type="text/javascript" src="/static/jquery/js/jquery-1.11.3.js"></script-->
+
+    <!-- Knockout -->
+    <script src="/static/jquery/js/knockout-3.3.0.js"></script>
+    <script src="/static/jquery/js/knockout.simpleGrid.3.0.js"></script>
+
+    {% block head %}
+
+    <title>iClinic | Home</title>
+
+    <!-- jQuery Mask -->
+    <script src="/static/jquery/js/jquery.mask.js"></script>
+
+    <script type="text/javascript" src="/static/scripts/index.js"></script>
+
+    {% endblock %}
+
+</head>
+<body>
+<div class="container">
+
+    <h1 style="font-size: 60px; font-weight: 400; color: #f65252;">iClinic</h1>
+
+    <h3>Challenge</h3>
+
+    <div class="row">
+
+        <div class="btn-group btn-group-justified">
+            <div class="btn-group">
+                <a href="/">
+                    <button type="button" class="btn btn-nav">
+                        <span class="glyphicon glyphicon-home"></span>
+                        <p class="p_style">Home</p>
+                    </button>
+                </a>
+            </div>
+            <div class="btn-group">
+                <a href="/records">
+                    <button type="button" class="btn btn-nav">
+                        <span class="glyphicon glyphicon-list-alt"></span>
+                        <p class="p_style">Records</p>
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        {% block content %}
+
+        <h1 style="margin: 15px">Home</h1>
+
+        <div class="col-md-12">
+            <div style="display: none;" id="cep_success" class="alert alert-success"><strong><span
+                    class="glyphicon glyphicon-alert"></span>Location successfully saved</strong>
+            </div>
+            <div style="display: none;" id="cep_info" class="alert alert-info"><strong><span
+                    class="glyphicon glyphicon-alert"></span>This location already saved</strong>
+            </div>
+            <div style="display: none;" id="cep_error" class="alert alert-danger"><span
+                    class="glyphicon glyphicon-alert"></span><strong> Error! Please
+                check the CEP value.</strong>
+            </div>
+            <div style="display: none;" id="cep_warning" class="alert alert-warning"><span
+                    class="glyphicon glyphicon-alert"></span><strong>No location was found for the given CEP.</strong>
+            </div>
+            <div class="panel panel-default" id="cep_loading" style="display: none;">
+                <div class="panel-body">
+                    <img src="/static/images/ajax-loader.gif"/>
+                    We are communicating with the server
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <h2>Search CEP</h2>
+            <br>
+            <fieldset>
+                <div class='kickass_field'>
+                    <input maxlength='9' required='required' id="cep_value">
+                    <lable>CEP<span>Enter the CEP to search</span></lable>
+                </div>
+                <button class="cep_button" id="cep_button">Search</button>
+            </fieldset>
+            </br>
+        </div>
+
+        <hr class="featurette-divider hidden-lg">
+        <div class="col-lg-5 col-md-push-1">
+            <address>
+                <h2>Location</h2>
+                <div>
+                    <span style="color: #9A9FB5; font-size: 22px;" class="glyphicon glyphicon-map-marker"></span>
+                    <a data-bind="attr: { href: url_maps, title: details_maps }" target="_blank">
+                        <p class="new_lead" data-bind="text: full_address"></p>
+                    </a>
+                </div>
+            </address>
+            <!--form id="save-cep" class="form-horizontal" role="form" method="post" action="/"-->
+            <input style="display: none;" data-bind="value: public_place" type="text" name="public_place">
+            <input style="display: none;" data-bind="value: neighborhood" type="text" name="neighborhood" value="">
+            <input style="display: none;" data-bind="value: city" type="text" name="city" value="">
+            <input style="display: none;" data-bind="value: istate" type="text" name="istate" value="">
+            <input style="display: none;" data-bind="value: zip_code" type="text" name="zip_code" value="">
+            <!--input class="save_cep_button" type="submit" name="" value=""-->
+            <button class="save_cep_button" id="save_cep_button" type="submit">Save</button>
+            <!--/form-->
+
+        </div>
+
+        {% endblock content %}
+
+    </div>
+</div>
+
+<footer>
+    <div class="footer">
+        <span>Made   by
+            <a href="https://br.linkedin.com/in/eduardo-rebelo" target="_blank"> Eduardo Rebelo </a>
+        </span>
+    </div>
+</footer>
+</body>
+</html>

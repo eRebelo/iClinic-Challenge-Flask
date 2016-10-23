@@ -1,0 +1,76 @@
+{% extends "index.html" %}
+
+{% block head %}
+
+<title>iClinic | Records</title>
+
+<script type="text/javascript" src="/static/scripts/records.js"></script>
+
+{% endblock %}
+
+{% block content %}
+
+<h1 style="margin: 15px">Records</h1>
+
+<div class="col-md-12">
+    <div style="display: none;" id="records_error" class="alert alert-danger"><span
+            class="glyphicon glyphicon-alert"></span><strong> Error! Please
+        check your connection</strong>
+    </div>
+    <div style="display: none;" id="records_warning" class="alert alert-warning"><span
+            class="glyphicon glyphicon-alert"></span><strong>Please, select at least one record</strong>
+    </div>
+    <div class="panel panel-default" id="records_loading" style="display: none;">
+        <div class="panel-body">
+            <img src="/static/images/ajax-loader.gif"/>
+            We are communicating with the server
+        </div>
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            CEP List
+        </div>
+        <div class="panel-body table-responsive">
+            <button style="float: left; width: 67px !important;" class="btn btn-danger" id="delete_cep"
+                    name="delete_cep">
+                Delete
+            </button>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th class="col-md-1 legend_table"></th>
+                    <th class="col-md-2 legend_table">Public Place</th>
+                    <th class="col-md-2 legend_table">Neighborhood</th>
+                    <th class="col-md-2 legend_table">City</th>
+                    <th class="col-md-2 legend_table">State</th>
+                    <th class="col-md-2 legend_table">CEP</th>
+                </tr>
+                </thead>
+                <!-- Knockout -->
+                <tbody data-bind="foreach: ceps">
+                <tr>
+                    <td><input type="checkbox" name="cep_id" data-bind="value: id"></td>
+                    <td data-bind="text: public_place"></td>
+                    <td data-bind="text: neighborhood"></td>
+                    <td data-bind="text: city"></td>
+                    <td data-bind="text: istate"></td>
+                    <td data-bind="text: zip_code"></td>
+                    <!--td><a href="">Edit</a></td-->
+                </tr>
+                </tbody>
+                <tbody id="tbody_none">
+                <tr>
+                    <td colspan="9">No record Found</td>
+                </tr>
+                </tbody>
+
+
+                <!-- End Knockout -->
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
